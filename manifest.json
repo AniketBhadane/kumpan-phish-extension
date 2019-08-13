@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "COEP Kumpan",
+  "short_name": "Kumpan",
+  "description": "Kumpan lets you know the suspiciousness of emails in your COEP's Outlook Email Account when you view emails.",
+  "version": "1.0",
+  "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "icon16.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "*://outlook.office.com/owa/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://outlook.office.com/owa/*"],
+      "run_at": "document_start",
+      "css" : ["inject.css"],
+      "js": ["jquery-3.2.1.min.js", "contentscript.js", "inject.js"]
+    }
+  ],
+  "web_accessible_resources": ["jquery-3.2.1.min.js", "outlook.js"]
+}

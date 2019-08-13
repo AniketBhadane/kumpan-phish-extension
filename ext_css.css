@@ -1,0 +1,57 @@
+/*body {
+  white-space: nowrap;
+}*/
+
+body{
+	width:400px;
+}
+
+.container-fluid {
+  margin-bottom: 20px;
+  text-align: center;
+
+}
+
+h5 {
+  padding-top: 20px;
+}
+
+#error {
+	padding-top: 10px;
+}
+
+#container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*
+These styles are required because bootstrap-toogle is not completely compatible with bootstrap 4.0
+bootstrap 4.0 does not have button-default
+*/
+
+.btn {
+	border-color: #adadad !important;
+}
+
+.btn:active, .btn.active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
+
+/*required for setting white color of toggle handle*/
+.btn-default {
+    background-color: #fff;
+}
+
+/*required for setting grey background during off state*/
+.btn-default:active, .btn-default.active {
+    background-color: #e6e6e6;
+}
+
+.btn-default:hover {
+    border-color: #767676 !important;
+}
